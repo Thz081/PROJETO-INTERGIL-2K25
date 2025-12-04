@@ -1,0 +1,83 @@
+/* Arquivo: intergil-client/src/pages/AdminLog/style.css */
+
+/* Reusa o CSS do layout para o card */
+@import url('../../components/AdminLayout/style.css');
+
+.log-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-text);
+  max-height: 70vh; /* Altura máxima */
+  overflow-y: auto; /* Adiciona scroll se passar */
+  border: 1px solid var(--text-secondary);
+  border-radius: 5px;
+}
+
+.log-item {
+  display: flex;
+  flex-wrap: wrap; /* Quebra linha no celular */
+  gap: 10px;
+  padding: 15px;
+  border-bottom: 1px solid rgba(159, 80, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.log-item:last-child {
+  border-bottom: none;
+}
+.log-item:nth-child(even) { /* Cor alternada */
+  background-color: rgba(159, 80, 255, 0.05);
+}
+
+.log-timestamp {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  width: 210px; /* Largura fixa */
+}
+
+.log-autor {
+  font-weight: bold;
+  color: var(--golden-yellow);
+  width: 150px; /* Largura fixa */
+}
+
+.log-acao {
+  color: var(--text-primary);
+  flex: 1; /* Ocupa o resto do espaço */
+  min-width: 200px;
+}
+
+.admin-error { /* Copiado do AdminSalas */
+  color: #FF5555;
+  font-family: var(--font-text);
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* === RESPONSIVIDADE ADMIN LOG === */
+@media (max-width: 768px) {
+  .log-item {
+    flex-direction: column; /* Empilha tudo */
+    gap: 5px;
+    padding: 12px;
+  }
+
+  /* Faz os campos ocuparem 100% */
+  .log-timestamp,
+  .log-autor,
+  .log-acao {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .log-timestamp {
+    font-size: 0.8rem;
+  }
+  .log-autor {
+    font-size: 1rem;
+  }
+  .log-acao {
+    font-size: 0.9rem;
+    word-break: break-word; /* Quebra o texto da ação */
+  }
+}

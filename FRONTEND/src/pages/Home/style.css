@@ -1,0 +1,42 @@
+/* ======================================= */
+/* === ESTILO DO BOTÃO EDITAL GERAL === */
+/* ======================================= */
+
+.edital-geral-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px; /* Puxa o botão para cima, logo abaixo do título */
+  margin-bottom: 40px; /* Espaço antes do Leaderboard */
+}
+
+.edital-geral-btn {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--background-dark);
+  background-color: var(--golden-yellow);
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  border: 2px solid var(--golden-yellow);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px; /* Espaço para o ícone de download */
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Sombra dourada */
+}
+
+.edital-geral-btn:hover {
+  background-color: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px var(--neon-cyan);
+  transform: scale(1.05);
+}
+
+/* Responsividade do botão */
+@media (max-width: 768px) {
+  .edital-geral-btn {
+    font-size: 0.9rem;
+    padding: 12px 20px;
+  }
+}

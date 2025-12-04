@@ -1,0 +1,252 @@
+/* --- Container Geral --- */
+.acordeao-mestre-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.acordeao-item {
+  border: 2px solid var(--text-secondary);
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.acordeao-item:has(.aberto) {
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 10px var(--neon-purple);
+}
+
+/* --- Header (Turma) --- */
+.acordeao-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.acordeao-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 1px solid var(--neon-cyan);
+}
+
+.acordeao-titulo {
+  font-family: var(--font-title);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  flex-grow: 1;
+}
+
+.acordeao-contador {
+  font-family: var(--font-text);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-right: 20px;
+}
+
+.acordeao-seta {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  transition: transform 0.3s ease;
+}
+.acordeao-seta.aberta {
+  transform: rotate(90deg);
+  color: var(--neon-cyan);
+}
+
+/* --- Conteúdo (Alunos) --- */
+.acordeao-content {
+  padding: 20px;
+  border-top: 2px dashed var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.acordeao-item:has(.aberto) .acordeao-content {
+  border-top-color: var(--neon-purple);
+}
+
+/* --- O CARD DE ALUNO COMPACTO --- */
+.aluno-item-compacto {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--text-secondary);
+}
+
+.aluno-info {
+  flex-basis: 30%;
+  min-width: 200px;
+  flex-grow: 1;
+}
+.aluno-nome {
+  display: block;
+  font-family: var(--font-text);
+  font-weight: bold;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+.aluno-id {
+  display: block;
+  font-family: var(--font-text);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.aluno-inscricoes {
+  flex-basis: 60%;
+  flex-grow: 2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Quebra a linha se tiver muitas inscrições */
+  gap: 8px;
+}
+.aluno-inscricoes li {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px 8px;
+  border-radius: 3px;
+  border-left: 2px solid var(--golden-yellow);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.aluno-pontos {
+  flex-basis: 5%;
+  flex-shrink: 0;
+  text-align: center;
+  font-family: var(--font-title);
+  color: var(--golden-yellow);
+  border-left: 1px dashed var(--text-secondary);
+  padding-left: 15px;
+}
+.aluno-pontos span {
+  font-size: 1.5rem;
+  display: block;
+}
+.aluno-pontos {
+  font-size: 0.8rem;
+}
+
+
+
+/* === BOTÃO EXCEL === */
+.btn-excel {
+  background-color: #217346; /* Verde Excel */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--font-title);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 2px solid #1e6b40;
+  text-decoration: none; /* Caso vire link */
+}
+
+.btn-excel:hover {
+  background-color: #2e8b57;
+  box-shadow: 0 0 15px #2e8b57;
+  transform: scale(1.05);
+}
+
+/* Ajuste do Header para caber o botão */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Responsividade do botão */
+@media (max-width: 768px) {
+  .header-flex {
+    flex-direction: column;
+    align-items: stretch; /* Estica o botão */
+  }
+  
+  .btn-excel {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* === RESPONSIVIDADE ACORDEÃO MESTRE === */
+@media (max-width: 768px) {
+
+  /* --- O Header (1º B DS, 2º A DS, etc) --- */
+  .acordeao-header {
+    flex-wrap: wrap; /* PERMITE QUEBRAR A LINHA */
+    padding: 12px 10px;
+  }
+
+  .acordeao-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .acordeao-titulo {
+    font-size: 1.2rem;
+    /* Remove o flex-basis e o order */
+    /* Deixa o título e o contador brigarem por espaço */
+    flex-grow: 1; 
+    margin-right: 10px; /* Dá um respiro */
+  }
+
+  .acordeao-contador {
+    font-size: 0.9rem;
+    flex-shrink: 0; /* Impede o contador de encolher */
+    /* Remove o flex-grow */
+  }
+
+  .acordeao-seta {
+    font-size: 1.5rem;
+  }
+
+
+  /* --- O Card de Aluno Compacto (Dentro do acordeão) --- */
+  .aluno-item-compacto {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  .aluno-info {
+    text-align: center;
+    min-width: unset; /* Reseta o min-width */
+  }
+
+  .aluno-nome {
+    font-size: 1rem;
+    word-break: break-word; /* Quebra nomes gigantes */
+  }
+  .aluno-id {
+    font-size: 0.8rem;
+  }
+
+  .aluno-inscricoes {
+    justify-content: center;
+    gap: 5px;
+  }
+  .aluno-inscricoes li {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+
+  .aluno-pontos {
+    border-left: none;
+    border-top: 1px dashed var(--text-secondary);
+    padding: 10px 0 0 0;
+  }
+}

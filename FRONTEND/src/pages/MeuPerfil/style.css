@@ -1,0 +1,163 @@
+.perfil-wrapper {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh; /* Para empurrar o footer para baixo */
+}
+
+.perfil-container {
+  width: 100%;
+  max-width: 700px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--neon-purple);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(159, 80, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perfil-loading {
+  font-family: var(--font-title);
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 50px;
+}
+
+/* Ícone gigante do usuário */
+.perfil-icone-gigante {
+  font-size: 100px;
+  color: var(--neon-cyan);
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.perfil-nome {
+  font-family: var(--font-title);
+  color: var(--text-primary);
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.perfil-turma {
+  font-family: var(--font-text);
+  color: var(--golden-yellow);
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+/* O card de "Minhas Inscrições" */
+.perfil-card {
+  width: 100%;
+  background-color: rgba(0,0,0,0.2);
+  border: 1px solid var(--text-secondary);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.perfil-card h3 {
+  font-family: var(--font-title);
+  color: var(--neon-cyan);
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.perfil-lista-inscricoes {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.perfil-lista-inscricoes li {
+  font-family: var(--font-text);
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  padding: 12px 5px;
+  border-bottom: 1px solid rgba(159, 80, 255, 0.2);
+}
+.perfil-lista-inscricoes li:last-child {
+  border-bottom: none;
+}
+
+.perfil-lista-vazia {
+  font-family: var(--font-text);
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Botão de Logout */
+.perfil-logout-btn {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: #FF5555; /* Vermelho perigo */
+  background-color: transparent;
+  border: 2px solid #FF5555;
+  border-radius: 5px;
+  padding: 12px 30px;
+  width: 100%;
+  max-width: 300px; /* Limita a largura do botão */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.perfil-logout-btn:hover {
+  background-color: #FF5555;
+  color: var(--text-primary);
+  box-shadow: 0 0 15px #FF5555;
+}
+
+/* === RESPONSIVIDADE MEU PERFIL === */
+@media (max-width: 768px) {
+  .perfil-container {
+    /* Diminui os paddings laterais no celular */
+    padding: 20px 15px;
+    width: 95%;
+  }
+
+  .perfil-icone-gigante {
+    font-size: 80px; /* Diminui o ícone */
+    margin-bottom: 10px;
+  }
+
+  .perfil-nome {
+    font-size: 1.5rem; /* <<< A CORREÇÃO PRINCIPAL */
+    line-height: 1.3; /* Melhora o espaçamento se quebrar a linha */
+    word-break: break-word; /* Força a quebra de nomes longos */
+  }
+
+  .perfil-turma {
+    font-size: 1rem; /* Diminui a turma */
+    margin-bottom: 20px;
+  }
+
+  .perfil-card {
+    padding: 15px;
+  }
+
+  .perfil-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .perfil-lista-inscricoes li {
+    font-size: 1rem;
+    padding: 10px 5px;
+  }
+}

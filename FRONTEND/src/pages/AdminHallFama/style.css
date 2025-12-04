@@ -1,0 +1,118 @@
+/* Estilo Base (Desktop) */
+.hall-list {
+    border-radius: 8px;
+    border: 1px solid #333;
+    overflow: hidden; /* Remove scroll horizontal indesejado no desktop */
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111;
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #222;
+    color: #ddd;
+}
+
+.admin-table th {
+    background: #1e1e1e;
+    color: #ffd700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+/* === RESPONSIVIDADE MOBILE (CARDS) === */
+@media (max-width: 768px) {
+    .hall-list {
+        border: none; /* Remove borda do container */
+        background: transparent;
+    }
+
+    .admin-table, .admin-table tbody, .admin-table tr, .admin-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .admin-table thead {
+        display: none; /* Esconde cabeçalho */
+    }
+
+    .admin-table tr {
+        background: #1e1e1e;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .admin-table td {
+        text-align: right;
+        padding: 10px 0;
+        border-bottom: 1px solid #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .admin-table td:last-child {
+        border-bottom: none;
+        justify-content: center;
+        padding-top: 15px;
+    }
+
+    /* Labels (Data-Label) */
+    .admin-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #ffd700;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        margin-right: 10px;
+    }
+
+    /* Ajuste Imagem */
+    .admin-table img {
+        width: 50px !important;
+        height: 50px !important;
+        border: 2px solid #333;
+    }
+}
+
+/* ... (Mantenha o CSS anterior da tabela/cards) ... */
+
+/* === RESPONSIVIDADE GERAL DA PÁGINA === */
+@media (max-width: 768px) {
+    /* Ajuste do Container para não colar na borda */
+    .admin-content-inner {
+        padding: 15px;
+    }
+
+    /* Header (Título) */
+    .admin-header-bar h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /* Formulário em Coluna */
+    .form-grid {
+        grid-template-columns: 1fr; /* Força 1 coluna */
+        gap: 15px;
+    }
+
+    .upload-btn-submit.full-width {
+        margin-top: 20px;
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    /* Ajuste dos Cards (Tabela) */
+    .admin-table tr {
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Destaque */
+    }
+}

@@ -1,0 +1,471 @@
+/* Container do grid de formulário */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* Um embaixo do outro no mobile */
+    }
+}
+
+/* Grupo de Inputs */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.input-group.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Inputs Padronizados */
+.admin-input {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.admin-input:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 5px rgba(255, 0, 255, 0.3);
+}
+
+/* Botão pequeno para adicionar tags */
+.btn-small {
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 0 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-small:hover {
+    background: #ff00ff;
+}
+
+/* Tags (Subcategorias) */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-badge {
+    background: rgba(255, 0, 255, 0.15);
+    border: 1px solid #ff00ff;
+    color: #ff00ff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tag-badge span:hover {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Cards de Modalidades (Miniaturas) */
+.modalidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.modalidade-card-mini {
+    background: #111;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.modalidade-card-mini:hover {
+    transform: translateY(-3px);
+    border-color: #00e5ff;
+}
+
+.modalidade-card-mini h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.btn-delete {
+    background: rgba(255, 50, 50, 0.2);
+    color: #ff4444;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: auto; /* Empurra pra baixo */
+    width: 100%;
+}
+
+.btn-delete:hover {
+    background: #ff4444;
+    color: #fff;
+}
+
+/* --- CSS DO ACCORDION --- */
+.modalidades-accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accordion-item {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.accordion-item.open {
+    border-color: #ff00ff;
+    background: #161616;
+}
+
+.accordion-header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(255,255,255,0.02);
+}
+
+.accordion-header:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.accordion-body {
+    padding: 15px;
+    border-top: 1px solid #333;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tag-badge-static {
+    background: #333;
+    color: #ddd;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: 1px solid #555;
+}
+
+.accordion-actions {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-delete-full {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-delete-full:hover {
+    background: #ff2222;
+}
+
+/* --- REUSO DO FORM CSS --- */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.input-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.admin-input {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.btn-small {
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 0 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-badge {
+    background: rgba(255, 0, 255, 0.15);
+    border: 1px solid #ff00ff;
+    color: #ff00ff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.upload-btn-submit {
+    margin-top: 15px;
+    background: #00e5ff;
+    color: #000;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* Container do Grid do Formulário */
+.form-grid-modalidade {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 20px;
+}
+
+.full-width {
+    grid-column: 1 / -1; /* Ocupa a largura total */
+}
+
+/* Inputs de Arquivo */
+.file-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    width: 100%;
+}
+
+/* --- LISTA DE CARDS DAS MODALIDADES --- */
+.modalidades-list-admin {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.mod-admin-card {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--neon-purple);
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    transition: transform 0.2s;
+}
+.mod-admin-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-cyan);
+}
+
+.mod-admin-imgs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.img-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-box span {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.img-box img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #555;
+}
+
+.mod-admin-info h4 {
+    color: var(--golden-yellow);
+    margin: 0 0 5px 0;
+    font-family: var(--font-title);
+}
+
+.mod-admin-info p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 2px 0;
+}
+
+.btn-delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid red;
+    color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+.btn-delete-icon:hover {
+    background: red;
+    color: white;
+}
+
+/* === RESPONSIVIDADE (MOBILE) === */
+@media (max-width: 768px) {
+    .form-grid-modalidade {
+        grid-template-columns: 1fr; /* Uma coluna no celular */
+        gap: 15px;
+    }
+    
+    .mod-admin-card {
+        margin-bottom: 10px;
+    }
+}
+
+/* ... (Mantenha o CSS anterior e adicione/substitua o final) ... */
+
+/* Ações no Card */
+.mod-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: all 0.3s;
+    color: white;
+}
+
+.btn-edit {
+    background: rgba(255, 193, 7, 0.2); /* Amarelo */
+    border: 1px solid #FFC107;
+    color: #FFC107;
+}
+.btn-edit:hover {
+    background: #FFC107;
+    color: black;
+}
+
+.btn-delete {
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid red;
+    color: red;
+}
+.btn-delete:hover {
+    background: red;
+    color: white;
+}
+
+/* Botão Cancelar Edição */
+.btn-cancel-edit {
+    background: transparent;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.btn-cancel-edit:hover {
+    border-color: red;
+    color: red;
+}
+
+/* Botão de Salvar Alterações (Cor diferente) */
+.btn-update {
+    background-color: var(--golden-yellow);
+    color: black;
+    font-weight: bold;
+}
+.btn-update:hover {
+    background-color: white;
+}

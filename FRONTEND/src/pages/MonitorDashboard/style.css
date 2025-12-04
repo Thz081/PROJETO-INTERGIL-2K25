@@ -1,0 +1,160 @@
+/* ======================================= */
+/* === LAYOUT GERAL DO DASHBOARD ADMIN === */
+/* (Reutilizado para o Monitor) */
+/* ======================================= */
+
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh; /* Altura total da tela */
+  background-color: var(--background-dark); /* Fundo escuro padrão */
+}
+
+/* ======================================= */
+/* === MENU LATERAL (SIDEBAR) === */
+/* ======================================= */
+.admin-sidebar {
+  width: 260px; /* Largura fixa do menu */
+  background-color: #07070F; /* Um pouco mais escuro que o fundo */
+  border-right: 2px solid var(--neon-purple);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0; /* Impede o menu de encolher */
+}
+
+.admin-sidebar-titulo {
+  font-family: var(--font-title);
+  color: var(--neon-cyan);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed var(--text-secondary);
+}
+
+.admin-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Empurra o botão de "Sair" para baixo */
+}
+
+.admin-menu-link {
+  font-family: var(--font-text);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.admin-menu-link:hover {
+  background-color: rgba(159, 80, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.admin-menu-link.active {
+  background-color: var(--neon-purple);
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+/* --- Botão de Sair (Logout) --- */
+.admin-logout-container {
+  padding-top: 20px;
+  border-top: 1px dashed var(--text-secondary);
+}
+
+.admin-logout-btn {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: #FF5555; /* Vermelho perigo */
+  background-color: transparent;
+  border: 2px solid #FF5555;
+  border-radius: 5px;
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.admin-logout-btn:hover {
+  background-color: #FF5555;
+  color: var(--text-primary);
+}
+
+
+/* ======================================= */
+/* === ÁREA DE CONTEÚDO PRINCIPAL === */
+/* ======================================= */
+.admin-content {
+  flex-grow: 1; /* Ocupa todo o resto do espaço */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra de Título (ex: "Visão Geral", "Gerenciar Salas") */
+.admin-header-bar {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px 30px;
+  border-bottom: 1px solid var(--text-secondary);
+}
+.admin-header-bar h2 {
+  font-family: var(--font-title);
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* Onde os cards e tabelas vão ficar */
+.admin-content-inner {
+  padding: 30px;
+  flex-grow: 1;
+}
+
+.admin-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--text-secondary);
+  border-radius: 8px;
+  padding: 25px;
+}
+.admin-card h3 {
+  font-family: var(--font-title);
+  color: var(--neon-cyan);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.admin-card p {
+  font-family: var(--font-text);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsividade do Admin */
+@media (max-width: 768px) {
+  .admin-wrapper {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid var(--neon-purple);
+  }
+  .admin-content {
+    width: 100%;
+  }
+}

@@ -1,0 +1,90 @@
+/* Arquivo: intergil-client/src/pages/Ranking/style.css */
+
+/* Puxa o estilo do Leaderboard que já fizemos */
+@import url('../../components/Leaderboard/style.css');
+
+.ranking-page-container {
+  width: 100%;
+  min-height: calc(100vh - 150px); /* (Altura da tela - header/footer) */
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha no topo */
+}
+
+/* Deixa o container da tabela maior na página de ranking */
+.ranking-page-container .leaderboard-container {
+  width: 95%;
+  max-width: 1000px; /* Maior que o da Home */
+  margin-top: 0;
+}
+
+/* Nova coluna de Turma */
+.leaderboard-table .turma-guilda {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap; /* Não quebra a linha */
+}
+
+/* Ajustes no Link "Voltar" */
+.ranking-page-container .ver-todos {
+  justify-content: center;
+  gap: 8px;
+}
+
+/* === RESPONSIVIDADE RANKING COMPLETO (CORRIGIDO) === */
+@media (max-width: 768px) {
+  .ranking-page-container {
+    padding: 20px 5px; /* Mais espaço lateral */
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 10px 5px; 
+    font-size: 0.9rem;
+  }
+
+  /* 1. TRAZ A LOGO DE VOLTA (Pequena) */
+  .leaderboard-table .logo-guilda {
+    display: table-cell; /* Garante que apareça */
+    width: 35px;
+    text-align: center;
+  }
+  
+  .leaderboard-table .logo-guilda img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* 2. ESCONDE A COLUNA "TURMA" (Pra dar espaço pra logo) */
+  /* Esconde o Cabeçalho "Turma" (é o 3º th porque 'Sala' ocupa 2) */
+  .leaderboard-table thead th:nth-child(3) {
+    display: none;
+  }
+  /* Esconde o Dado da Turma */
+  .leaderboard-table .turma-guilda {
+    display: none;
+  }
+
+  /* 3. Ajustes Finais */
+  .leaderboard-table .posicao {
+    width: 30px;
+    text-align: center;
+  }
+
+  .leaderboard-table .pontuacao {
+    font-size: 0.9rem;
+    width: 70px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .leaderboard-table .nome-guilda {
+    font-size: 0.9rem;
+    /* Deixa o nome ocupar o espaço que sobrar */
+    width: auto; 
+    white-space: normal; /* Quebra linha se o nome for gigante */
+    line-height: 1.2;
+  }
+}

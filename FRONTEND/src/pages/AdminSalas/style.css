@@ -1,0 +1,298 @@
+/* ======================================= */
+/* === ESTILO DO FORMULÁRIO DE ADIÇÃO === */
+/* ======================================= */
+
+.admin-form-inline {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.admin-form-inline .input-group {
+  flex: 1;
+  min-width: 150px;
+}
+
+.admin-form-inline .input-group label {
+  font-family: var(--font-title);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.admin-form-inline .input-group input {
+  font-family: var(--font-text);
+  font-size: 1rem;
+  padding: 10px;
+  background-color: var(--background-dark);
+  border: 2px solid var(--text-secondary);
+  border-radius: 5px;
+  color: var(--text-primary);
+  width: 100%;
+}
+.admin-form-inline .input-group input:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.admin-btn-submit {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: var(--background-dark);
+  background-color: var(--golden-yellow);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.admin-btn-submit:hover {
+  background-color: var(--neon-cyan);
+}
+
+.admin-error {
+  color: #FF5555;
+  font-family: var(--font-text);
+}
+
+/* === ESTILO DO BOTÃO DE ARQUIVO === */
+.admin-file-input {
+  font-family: var(--font-text);
+  font-size: 0.8rem;
+  padding: 4px;
+  background-color: var(--background-dark);
+  border: 2px solid var(--text-secondary);
+  border-radius: 5px;
+  color: var(--text-secondary);
+  width: 100%;
+  cursor: pointer;
+}
+.admin-file-input::-webkit-file-upload-button {
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  background-color: var(--text-secondary);
+  color: var(--background-dark);
+  border: none;
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.admin-file-input::-webkit-file-upload-button:hover {
+  background-color: var(--neon-cyan);
+}
+.admin-file-input::file-selector-button {
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  background-color: var(--text-secondary);
+  color: var(--background-dark);
+  border: none;
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.admin-file-input::file-selector-button:hover {
+  background-color: var(--neon-cyan);
+}
+
+
+/* ======================================= */
+/* === ESTILO DA TABELA DE SALAS === */
+/* ======================================= */
+
+.admin-tabela-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-tabela {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  font-family: var(--font-text);
+  margin-top: 20px;
+}
+.admin-tabela th,
+.admin-tabela td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(159, 80, 255, 0.2);
+  white-space: nowrap;
+}
+.admin-tabela th {
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  color: var(--golden-yellow);
+}
+.admin-tabela td {
+  color: var(--text-primary);
+  vertical-align: middle; /* Alinha o ícone e o texto */
+}
+.tabela-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--neon-cyan);
+}
+
+/* ======================================= */
+/* === AQUI A MUDANÇA (ARQUIVO 2) === */
+/* ======================================= */
+/* Arquivo: intergil-client/src/pages/AdminSalas/style.css */
+
+.admin-tabela td.tabela-insta-icon {
+  /* Deixa a célula se comportar como uma célula normal */
+  /* Removemos o display:flex, justify-content, etc. */
+  text-align: center; /* O CSS original já tinha isso */
+  vertical-align: middle; /* O CSS original já tinha isso */
+  padding: 12px 15px; /* Devolve o padding padrão */
+}
+.admin-tabela td.tabela-insta-icon span {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.admin-tabela td.tabela-insta-icon a {
+  color: var(--neon-cyan); /* Cor "GAME ON" */
+  text-decoration: none; /* Tira o sublinhado feio */
+  transition: all 0.3s ease;
+  font-size: 1.5rem; /* Tamanho do ícone */
+}
+.admin-tabela td.tabela-insta-icon a:hover {
+  color: var(--golden-yellow); /* Fica dourado no hover */
+  transform: scale(1.1);
+}
+/* ======================================= */
+
+.tabela-acoes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.admin-btn-tabela {
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.admin-btn-tabela.add {
+  background-color: #55FF55;
+  color: var(--background-dark);
+}
+.admin-btn-tabela.add:hover {
+  background-color: #a0ffa0;
+}
+.admin-btn-tabela.remove {
+  background-color: #FFC107;
+  color: var(--background-dark);
+}
+.admin-btn-tabela.remove:hover {
+  background-color: #ffe082;
+}
+.admin-btn-tabela.edit {
+  background-color: var(--neon-cyan);
+  color: var(--background-dark);
+}
+.admin-btn-tabela.edit:hover {
+  background-color: var(--text-primary);
+}
+.admin-btn-tabela.delete {
+  background-color: #FF5555;
+  color: var(--text-primary);
+}
+.admin-btn-tabela.delete:hover {
+  background-color: #ff8a8a;
+  color: var(--background-dark);
+}
+/* Arquivo: intergil-client/src/pages/AdminSalas/style.css */
+/* (COLE ISSO NO FINAL) */
+
+/* Espaço entre as seções (Form e Tabela) */
+.admin-section + .admin-section {
+  margin-top: 50px; /* AUMENTA O ESPAÇO AQUI */
+}
+
+/* Estilo dos títulos (Adicionar e Salas) */
+.admin-section h2 {
+  font-size: 1.8rem; /* Um pouco maior */
+  margin-bottom: 25px; /* Espaço entre o título e o conteúdo (form/tabela) */
+  padding-bottom: 15px; /* Linha de separação */
+  border-bottom: 1px dashed var(--text-secondary);
+}
+/* Arquivo: intergil-client/src/pages/AdminSalas/style.css */
+/* (COLE ISSO NO FINAL) */
+
+.tabela-acoes-pontos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+/* O novo input de pontos */
+.admin-pontos-input {
+  font-family: var(--font-text);
+  font-size: 1rem;
+  padding: 8px;
+  background-color: var(--background-dark);
+  border: 2px solid var(--text-secondary);
+  border-radius: 5px;
+  color: var(--text-primary);
+  width: 70px; /* Largura fixa */
+  text-align: center;
+}
+
+.admin-pontos-input:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+}
+/* === RESPONSIVIDADE ADMIN SALAS === */
+@media (max-width: 768px) {
+
+  /* 1. Arruma o Formulário de Adicionar Sala */
+  .admin-form-inline {
+    flex-direction: column; /* Empilha os inputs */
+    align-items: stretch;   /* Faz ocuparem 100% da largura */
+    gap: 20px;
+  }
+
+  .admin-form-inline .input-group {
+    min-width: 100%; /* Garante 100% */
+  }
+
+  .admin-btn-submit {
+    height: auto;
+    padding: 15px 20px;
+    justify-content: center;
+  }
+
+  /* 2. Arruma a Tabela de Salas Cadastradas */
+  /* (O overflow-x: auto que você já tem é PERFEITO) */
+  /* A gente só ajusta o tamanho mínimo dela */
+  .admin-tabela {
+    min-width: 650px; /* Diminui um pouco o mínimo */
+  }
+
+  /* 3. Arruma a célula de Ações */
+  .tabela-acoes-pontos {
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha */
+    gap: 10px;
+  }
+}

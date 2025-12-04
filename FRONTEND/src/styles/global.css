@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+
+:root {
+  --background-dark: #0D0D1A;
+  --neon-purple: #9F50FF;
+  --neon-cyan: #00F5FF;
+  --golden-yellow: #FFD700;
+  --text-primary: #FFFFFF;
+  --text-secondary: #AAAAAA;
+
+  
+  --font-title: 'Press Start 2P', cursive;
+  --font-text: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  font-family: var(--font-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  color: var(--neon-cyan); 
+  letter-spacing: 1.5px;
+}
+
+/* === LOADING SPINNER (NEON) === */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: 100%;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(159, 80, 255, 0.1); /* Roxo Transparente */
+  border-left-color: var(--neon-cyan); /* Ciano Brilhante */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

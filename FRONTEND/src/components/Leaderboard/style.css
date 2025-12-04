@@ -1,0 +1,183 @@
+
+.leaderboard-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 50px auto; 
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05); 
+  border: 2px solid var(--neon-purple); 
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(159, 80, 255, 0.5); 
+}
+
+/* O título "LEADERBOARD" */
+.leaderboard-container h2 {
+  font-family: var(--font-title); 
+  color: var(--neon-cyan);
+  text-align: center;
+  font-size: 2rem; 
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px var(--neon-cyan); 
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  padding: 40px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse; 
+  font-family: var(--font-text); 
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle; /* Alinha o texto e a logo no meio */
+}
+
+/* Cabeçalho da tabela */
+.leaderboard-table th {
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  color: var(--golden-yellow); 
+  border-bottom: 2px solid var(--neon-purple);
+}
+
+/* Linhas da tabela */
+.leaderboard-table tbody tr {
+  border-bottom: 1px solid rgba(159, 80, 255, 0.2); 
+  transition: background-color 0.2s ease;
+}
+
+.leaderboard-table tbody tr:hover {
+  background-color: rgba(159, 80, 255, 0.1);
+}
+
+.leaderboard-table .posicao {
+  font-weight: bold;
+  color: var(--golden-yellow);
+  width: 10%; /* Ajustei a largura */
+}
+
+.leaderboard-table .logo-guilda {
+  width: 50px; 
+  padding-right: 0; 
+}
+
+.leaderboard-table .logo-guilda img {
+  width: 40px; /* Tamanho da logo */
+  height: 40px; /* Tamanho da logo */
+  border-radius: 50%; /* Deixa a logo redonda */
+  border: 2px solid var(--neon-cyan); /* Borda neon */
+  object-fit: cover; /* Garante que a imagem preencha o círculo */
+  display: block; /* Remove espaço extra embaixo da imagem */
+}
+
+.leaderboard-table .nome-guilda {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  width: 60%;
+  padding-left: 10px; 
+}
+
+.leaderboard-table .pontuacao {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--neon-cyan);
+  text-align: right;
+  width: 20%; 
+}
+
+
+@media (max-width: 600px) {
+  .leaderboard-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 10px 8px;
+  }
+  
+  .leaderboard-table .logo-guilda img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.ver-todos {
+  display: block; /* Faz o link se comportar como um bloco */
+  width: fit-content; /* Largura exata do conteúdo */
+  margin: 20px auto 0 auto; /* 20px em cima, centralizado */
+  padding: 10px 20px; /* Espaçamento interno */
+
+  color: var(--golden-yellow); /* Cor do texto (dourado) */
+  font-family: var(--font-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none; /* TIRA O SUBLINHADO FEIO */
+  text-transform: uppercase; /* Deixa em maiúsculo */
+  
+  border: 2px solid var(--golden-yellow); /* Borda dourada */
+  border-radius: 4px; /* Cantos levemente arredondados */
+
+  display: flex; /* Para alinhar o texto e a seta */
+  align-items: center;
+  gap: 8px; /* Espaço entre o texto e a seta */
+
+  transition: all 0.3s ease; /* Animação suave */
+}
+
+.ver-todos:hover {
+  background-color: var(--golden-yellow); /* Fundo dourado */
+  color: #0D0D1A; /* Texto na cor do fundo (roxo escuro) */
+  box-shadow: 0 0 15px var(--golden-yellow); /* Brilho neon */
+  transform: scale(1.05); /* Leve "pulo" */
+}
+
+@media (max-width: 480px) {
+  .leaderboard-table th {
+    font-size: 0.9rem; /* Diminui o cabeçalho */
+    padding: 10px 4px;
+  }
+  
+  .leaderboard-table td {
+    padding: 10px 2px; /* Menos padding */
+  }
+
+  /* Posição - bem pequena */
+  .leaderboard-table .posicao {
+    font-size: 0.9rem;
+    min-width: 25px;
+    padding-right: 5px;
+  }
+
+  /* Logo - um pouco menor */
+  .leaderboard-table .logo-guilda img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Pontuação - pequena */
+  .leaderboard-table .pontuacao {
+    font-size: 0.9rem;
+    min-width: 55px;
+    text-align: right;
+  }
+
+  /* Nome da Sala (A CORREÇÃO) */
+  .leaderboard-table .nome-guilda {
+    font-size: 0.9rem;
+    white-space: nowrap;     /* <--- FORÇA FICAR EM 1 LINHA */
+    overflow: hidden;
+    text-overflow: ellipsis; /* <--- BOTA "..." SE O NOME FOR GIGANTE */
+    text-align: left;
+    padding-left: 5px;
+  }
+}

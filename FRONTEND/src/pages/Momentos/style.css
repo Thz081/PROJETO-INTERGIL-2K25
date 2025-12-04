@@ -1,0 +1,123 @@
+.momentos-wrapper {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.momentos-container {
+  width: 100%;
+  max-width: 1200px; /* Mais largo para o grid */
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--neon-purple);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(159, 80, 255, 0.5);
+}
+
+.momentos-titulo {
+  font-family: var(--font-title);
+  color: var(--neon-cyan);
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px var(--neon-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.momentos-subtitulo {
+  font-family: var(--font-text);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.momentos-loading {
+  font-family: var(--font-title);
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 50px;
+}
+.momentos-loading.error {
+  color: #FF5555;
+}
+
+/* ======================================= */
+/* === O GRID DE FOTOS E VÍDEOS === */
+/* ======================================= */
+.momentos-grid {
+  display: grid;
+  /* Cria colunas que tentam ter 350px, mas se ajustam */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.momento-card {
+  border: 2px solid var(--text-secondary);
+  border-radius: 8px;
+  overflow: hidden; /* Garante que o vídeo não "vaze" */
+  background-color: rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.momento-card:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px var(--neon-cyan);
+  transform: scale(1.03);
+}
+
+.momento-imagem {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* "Zooma" e corta (melhor para fotos) */
+  display: block;
+}
+
+/* Wrapper para o vídeo (para o aspect-ratio) */
+.momento-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Proporção 16:9 (para vídeos do YouTube) */
+  height: 0;
+}
+.momento-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.momento-legenda {
+  font-family: var(--font-text);
+  font-weight: bold;
+  color: var(--text-primary);
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+}
+
+/* === RESPONSIVIDADE MOMENTOS === */
+@media (max-width: 768px) {
+  .momentos-container {
+    padding: 20px 15px;
+  }
+  .momentos-titulo {
+    font-size: 1.8rem;
+    gap: 10px;
+  }
+  .momentos-subtitulo {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  
+  /* Força o grid a ter 1 coluna no celular */
+  .momentos-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}

@@ -1,0 +1,40 @@
+.main-footer {
+  width: 100%;
+  padding: 30px 5%;
+  margin-top: 50px; /* Dá um espaço antes do rodapé */
+  background-color: var(--background-dark);
+  border-top: 2px solid var(--neon-purple); /* Borda igual ao Header */
+  box-shadow: 0 -4px 15px rgba(159, 80, 255, 0.3); /* Sombra para cima */
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  color: var(--text-secondary); /* Cinza claro */
+  font-family: var(--font-text);
+  font-size: 0.9rem;
+}
+
+.footer-content .copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4); /* Mais escuro */
+  margin-top: 15px;
+}
+
+.footer-socials {
+  margin-bottom: 15px;
+}
+
+.social-link {
+  font-size: 1.8rem; /* Tamanho do ícone */
+  color: var(--neon-cyan);
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--golden-yellow); /* Muda pra amarelo no hover */
+  transform: scale(1.2); /* Efeito de "saltar" */
+  text-shadow: 0 0 10px var(--golden-yellow);
+}
+         

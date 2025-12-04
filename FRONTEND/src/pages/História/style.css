@@ -1,0 +1,138 @@
+/* Arquivo: src/pages/História/style.css */
+
+.historia-container {
+  width: 100%;
+  padding-bottom: 50px;
+  /* Um fundo sutil para a página não ficar preta chapada */
+  background: radial-gradient(circle at top, #1a0b2e, #000000);
+}
+
+.historia-origem {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.03); /* Mais sutil */
+  border: 1px solid var(--neon-purple);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(159, 80, 255, 0.2);
+  backdrop-filter: blur(5px); /* Efeito de vidro */
+}
+
+.historia-titulo-pagina {
+  font-family: 'Press Start 2P', cursive; /* Garanta que a fonte está importada */
+  color: #00e5ff; /* Neon Cyan */
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #00e5ff;
+  line-height: 1.5;
+}
+
+.historia-paragrafo {
+  font-family: 'Roboto', sans-serif; /* Fonte de leitura */
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* === SEÇÃO DE CONTATO === */
+.historia-contato {
+  width: 90%;
+  max-width: 600px;
+  margin: 60px auto 20px;
+  padding: 30px;
+  background-color: rgba(13, 13, 26, 0.9);
+  border: 2px solid #ffd700; /* Dourado */
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de brilho passando no card */
+.historia-contato::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,215,0,0.1), transparent);
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    100% { left: 150%; }
+}
+
+.contato-titulo {
+  font-family: 'Press Start 2P', cursive;
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.contato-nome {
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px #000;
+}
+
+.contato-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* BOTÃO INSTAGRAM ESTILIZADO */
+.contato-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #fff;
+  /* Gradiente do Instagram */
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 30px; /* Redondo */
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
+}
+
+.contato-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(220, 39, 67, 0.6);
+  filter: brightness(1.1);
+}
+
+/* BOTÃO EMAIL */
+.contato-btn.btn-email {
+  background: transparent;
+  border: 2px solid #00e5ff;
+  color: #00e5ff;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+.contato-btn.btn-email:hover {
+  background: #00e5ff;
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+    .historia-titulo-pagina { font-size: 1.5rem; }
+    .historia-origem, .historia-contato { width: 95%; padding: 20px; }
+    .contato-btn { width: 100%; justify-content: center; }
+}

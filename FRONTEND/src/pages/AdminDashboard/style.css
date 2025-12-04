@@ -1,0 +1,87 @@
+/* Arquivo: src/pages/AdminDashboard/style.css */
+
+/* Reusa o CSS do layout para o .admin-card padrão */
+@import url('../../components/AdminLayout/style.css');
+
+/* Espaçamento entre os cards na Visão Geral */
+.admin-content-inner .admin-card + .admin-card {
+  margin-top: 30px;
+}
+
+/* === ESTILO DO NOVO CARD DE UPLOAD === */
+.upload-card p {
+  font-size: 0.9rem; /* Fonte menor pra descrição */
+  color: var(--text-secondary);
+}
+
+.upload-input-wrapper {
+  margin: 20px 0;
+}
+
+/* Esconde o <input> feio */
+.upload-input-wrapper input[type="file"] {
+  display: none;
+}
+
+/* Estiliza o <label> pra parecer um input */
+.upload-label {
+  font-family: var(--font-text);
+  font-size: 1rem;
+  padding: 10px 15px;
+  background-color: var(--background-dark);
+  border: 2px dashed var(--text-secondary);
+  border-radius: 5px;
+  color: var(--text-primary);
+  width: 100%;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.upload-label:hover {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+}
+
+/* Botão de Enviar */
+.upload-btn-submit {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: var(--background-dark);
+  background-color: var(--golden-yellow);
+  border: none;
+  border-radius: 5px;
+  padding: 12px 25px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.upload-btn-submit:hover {
+  background-color: var(--neon-cyan);
+}
+.upload-btn-submit:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+/* Feedback (Sucesso/Erro) */
+.upload-feedback {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-text);
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.upload-feedback.error {
+  color: #FF5555;
+  background-color: rgba(255, 85, 85, 0.1);
+  border: 1px solid #FF5555;
+}
+.upload-feedback.success {
+  color: #55FF55;
+  background-color: rgba(85, 255, 85, 0.1);
+  border: 1px solid #55FF55;
+}

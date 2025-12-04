@@ -1,0 +1,208 @@
+/* Arquivo: intergil-client/src/pages/Horarios/style.css */
+/* VERSÃO 2.1 - O SEU "CSS ANTIGO" SINCRONIZADO */
+
+.horarios-wrapper {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.horarios-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--neon-purple);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(159, 80, 255, 0.5);
+}
+
+.horarios-titulo {
+  font-family: var(--font-title);
+  color: var(--golden-yellow);
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px var(--golden-yellow);
+}
+
+.horarios-subtitulo {
+  font-family: var(--font-text);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* === ESTRUTURA DE ACORDEÃO === */
+.horarios-acordeao {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.acordeao-item-horario {
+  border: 2px solid var(--text-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.acordeao-item-horario:hover {
+  border-color: var(--neon-cyan);
+}
+
+.acordeao-header-horario {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+.acordeao-header-horario .header-img-horario {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--neon-purple);
+  margin-right: 15px;
+}
+.acordeao-header-horario .header-titulo-horario {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  flex-grow: 1;
+}
+.acordeao-header-horario svg {
+  font-size: 1.5rem;
+  color: var(--neon-cyan);
+  flex-shrink: 0;
+  /* === ADIÇÃO (Para a seta girar) === */
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+/* === ADIÇÃO (Classe que faz a seta girar) === */
+.acordeao-header-horario.aberta svg {
+  transform: rotate(180deg);
+}
+
+.acordeao-conteudo-horario {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px dashed var(--text-secondary);
+}
+
+/* A Tabela (DENTRO do acordeão) */
+.horarios-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-text);
+}
+
+.horarios-tabela th,
+.horarios-tabela td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(159, 80, 255, 0.2);
+}
+.horarios-tabela tr:last-child td {
+  border-bottom: none;
+}
+
+.horarios-tabela th {
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  color: var(--golden-yellow);
+  text-align: center;
+}
+
+.horarios-tabela td {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.horarios-tabela th:first-child,
+.horarios-tabela td:first-child {
+  text-align: left;
+  font-weight: bold;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.horarios-tabela tbody tr:hover {
+  background-color: rgba(159, 80, 255, 0.1);
+}
+
+/* Mensagem de status (Loading, Erro, ou Nenhum horário) */
+.horarios-status-text {
+  font-family: var(--font-text);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-style: italic;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.03); 
+  border: 1px dashed var(--text-secondary);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.horarios-status-text.error {
+  color: #FF5555;
+  border-color: #FF5555;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .horarios-wrapper { padding: 20px 10px; }
+  .horarios-container { padding: 20px; }
+  .horarios-titulo { font-size: 1.8rem; }
+  .horarios-subtitulo { font-size: 1rem; margin-bottom: 30px; }
+  .acordeao-header-horario .header-titulo-horario { font-size: 1.2rem; }
+  .acordeao-header-horario .header-img-horario { width: 40px; height: 40px; }
+  .acordeao-conteudo-horario { padding: 10px; }
+  
+  /* Truque para tabela responsiva: */
+  .horarios-tabela thead {
+    display: none;
+  }
+  .horarios-tabela tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 5px;
+    overflow: hidden; /* Garante que o <td> não vaze */
+  }
+  .horarios-tabela td {
+    display: block;
+    text-align: right; 
+    border-bottom: 1px dotted var(--text-secondary);
+    font-size: 1rem;
+    padding-left: 110px; /* Espaço para o "data-label" */
+    position: relative;
+  }
+  .horarios-tabela td:last-child { border-bottom: none; }
+  
+  .horarios-tabela td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 95px; /* (padding-left - 15px) */
+    text-align: left;
+    font-family: var(--font-title);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .horarios-tabela td:first-child {
+    text-align: center;
+    background-color: rgba(159, 80, 255, 0.1);
+    padding-left: 10px; /* Reseta o padding da primeira célula */
+  }
+  .horarios-tabela td:first-child:before {
+    display: none;
+  }
+}

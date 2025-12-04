@@ -1,0 +1,105 @@
+.carousel-container {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.carousel-container h2 {
+  font-family: var(--font-title);
+  color: var(--neon-cyan);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  padding: 40px;
+}
+
+.card-container {
+  padding: 0 10px;
+}
+
+.mod-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--neon-purple);
+  box-shadow: 0 0 15px rgba(159, 80, 255, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mod-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--neon-purple);
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(13, 13, 26, 0.9) 0%, rgba(13, 13, 26, 0) 100%);
+  padding: 30px 15px 15px 15px;
+}
+
+.card-overlay h3 {
+  font-family: var(--font-title);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px var(--background-dark);
+}
+
+/* Bolinhas (Dots) */
+.slick-dots li button:before {
+  color: var(--neon-purple) !important;
+  font-size: 10px;
+}
+.slick-dots li.slick-active button:before {
+  color: var(--neon-cyan) !important;
+}
+
+/* --- CORREÇÃO DAS SETAS (VERSÃO ÚNICA E CORRETA) --- */
+.custom-arrow {
+  z-index: 10; 
+}
+.custom-arrow.prev-arrow {
+  left: -25px; /* Posição Desktop */
+}
+.custom-arrow.next-arrow {
+  right: -25px; /* Posição Desktop */
+}
+
+/* * O "ULTIMATO" DAS SETAS
+ * Força as setas a aparecerem no celular.
+*/
+@media (max-width: 768px) {
+  .slick-prev,
+  .slick-next,
+  .custom-arrow {
+    display: block !important; 
+  }
+  /* Ajusta posição no mobile */
+  .custom-arrow.prev-arrow {
+    left: -18.5px;
+  }
+  .custom-arrow.next-arrow {
+    right: -18.5px;
+  }
+  
+  /* Esconde os PONTOS (dots) no celular */
+  .carousel-container .slick-dots {
+    display: none !important;
+  }
+}

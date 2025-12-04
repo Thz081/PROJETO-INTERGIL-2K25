@@ -1,0 +1,243 @@
+/* ======================================= */
+/* === LAYOUT GERAL DO DASHBOARD ADMIN === */
+/* ======================================= */
+
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh; /* Altura total da tela */
+  background-color: var(--background-dark); /* Fundo escuro padrão */
+}
+
+/* ======================================= */
+/* === MENU LATERAL (SIDEBAR) === */
+/* ======================================= */
+.admin-sidebar {
+  width: 260px; /* Largura fixa do menu */
+  background-color: #07070F; /* Um pouco mais escuro que o fundo */
+  border-right: 2px solid var(--neon-purple);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0; /* Impede o menu de encolher */
+}
+
+.admin-sidebar-titulo {
+  font-family: var(--font-title);
+  color: var(--neon-cyan);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed var(--text-secondary);
+}
+
+.admin-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Empurra o botão de "Sair" para baixo */
+}
+
+.admin-menu-link {
+  font-family: var(--font-text);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.admin-menu-link:hover {
+  background-color: rgba(159, 80, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.admin-menu-link.active {
+  background-color: var(--neon-purple);
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+/* --- Botão de Sair (Logout) --- */
+.admin-logout-container {
+  padding-top: 20px;
+  border-top: 1px dashed var(--text-secondary);
+}
+
+.admin-logout-btn {
+  font-family: var(--font-title);
+  font-size: 1rem; /* Mantém 1rem */
+  color: #FF5555;
+  background-color: transparent;
+  border: 2px solid #FF5555;
+  border-radius: 5px;
+  padding: 10px 15px; /* <--- DIMINUI UM POUCO O PADDING (OU PODE TENTAR 8PX 15PX) */
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* <--- DIMINUI UM POUCO O ESPAÇO ENTRE ÍCONE E TEXTO */
+  transition: all 0.3s ease;
+  white-space: nowrap; /* <--- IMPEDE A QUEBRA DE LINHA NO TEXTO */
+  overflow: hidden; /* <--- ESCONDE SE AINDA SIM ESTOURAR (COMO UM ÚLTIMO RECURSO) */
+  text-overflow: ellipsis; /* <--- Adiciona "..." se o texto for muito longo (complementa overflow: hidden) */
+}
+
+.admin-logout-btn:hover {
+  background-color: #FF5555;
+  color: var(--text-primary);
+}
+
+/* ======================================= */
+/* === ÁREA DE CONTEÚDO PRINCIPAL === */
+/* ======================================= */
+.admin-content {
+  flex-grow: 1; /* Ocupa todo o resto do espaço */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra de Título (ex: "Visão Geral", "Gerenciar Salas") */
+.admin-header-bar {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px 30px;
+  border-bottom: 1px solid var(--text-secondary);
+}
+.admin-header-bar h2 {
+  font-family: var(--font-title);
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* Onde os cards e tabelas vão ficar */
+.admin-content-inner {
+  padding: 30px;
+  flex-grow: 1;
+}
+
+.admin-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--text-secondary);
+  border-radius: 8px;
+  padding: 25px;
+}
+.admin-card h3 {
+  font-family: var(--font-title);
+  color: var(--neon-cyan);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.admin-card p {
+  font-family: var(--font-text);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsividade do Admin */
+@media (max-width: 768px) {
+  .admin-wrapper {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid var(--neon-purple);
+  }
+  .admin-content {
+    width: 100%;
+  }
+}
+
+/* ======================================= */
+/* === RESPONSIVIDADE (MENU HAMBÚRGUER) === */
+/* ======================================= */
+
+/* --- O Botão Hambúrguer (Com o estilo do Header) --- */
+.admin-hamburger-btn {
+  display: none; /* Escondido no Desktop */
+  position: fixed; /* Fica fixo na tela */
+  top: 15px;
+  right: 20px;
+  z-index: 1002;
+  
+  /* === ESTILO CORRIGIDO (Igual ao Header) === */
+  background: transparent;     /* <--- MUDANÇA 1 */
+  color: var(--neon-cyan);     /* <--- MUDANÇA 2 */
+  border: none;
+  border-radius: 0;            
+  padding: 0;                  
+  font-size: 2rem;             /* <--- MUDANÇA 3 (Icone maior) */
+  cursor: pointer;
+}
+
+/* --- O Overlay (Escurecer a tela) --- */
+.admin-content-overlay {
+  display: none; /* Escondido no Desktop */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998; /* Abaixo do menu */
+}
+
+
+@media (max-width: 768px) {
+  /* 1. Tira o layout de coluna que estava bugando */
+  .admin-wrapper {
+    flex-direction: row; /* Mantém a direção original */
+  }
+
+  /* 2. Mostra o botão hambúrguer */
+  .admin-hamburger-btn {
+    display: block;
+  }
+
+  /* 3. Esconde o Menu (Sidebar) */
+  .admin-sidebar {
+    position: fixed; /* Fica "flutuando" */
+    left: -300px; /* Joga pra fora da tela */
+    top: 0;
+    height: 100vh;
+    width: 280px; /* Largura fixa no mobile */
+    z-index: 1001;
+    transition: left 0.3s ease-in-out;
+    border-right: 2px solid var(--neon-purple);
+    /* Tira a borda de baixo que não precisamos mais */
+    border-bottom: none; 
+  }
+
+  /* 4. A MÁGICA: Mostra o menu quando o wrapper tem a classe */
+  .admin-wrapper.menu-open .admin-sidebar {
+    left: 0; /* Puxa o menu pra dentro da tela */
+    box-shadow: 5px 0 15px rgba(159, 80, 255, 0.3);
+  }
+
+  /* 5. Mostra o overlay quando o menu tá aberto */
+  .admin-wrapper.menu-open .admin-content-overlay {
+    display: block;
+  }
+
+  /* 6. O conteúdo principal ocupa 100% */
+  .admin-content {
+    width: 100%;
+  }
+
+  /* 7. Arruma os títulos do conteúdo (Visão Geral, etc) */
+  .admin-header-bar {
+    padding-top: 70px; /* <--- ADICIONA ESPAÇO para o botão Hambúrguer não ficar em cima */
+  }
+}
